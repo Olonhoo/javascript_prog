@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //пример 1
+        let a = 1, b = 1, c, d;
+        c = ++a;
+        alert(c); // ответ: 2. Этот оператор - префиксный преинкремент. Его операция заключается в том, что он увеличивает значение переменной на один а ПОСЛЕ отдает данные переменной c.
+        //пример 2
+        d = b++;
+        alert(d); //ответ: 1. Этот оператор - префиксный постинкремент. Его операция заключается в том, что СНАЧАЛА он присваивает свои данные переменной, а ПОСЛЕ увеличивается на единицу.
+        //пример 3
+        c = 2 + ++a;
+        alert(c); //ответ: 5. Сначала приоритет отдается префиксному преинкременту, тем самым а увеличивается еще на один, т.е =3. Далее к этой переменной прибавляется 2 и итог = ответ 5
+        //пример 4
+        d = 2 + b++;
+        alert(d); //ответ: 4. Сначала выполняется действие сложения, т.к это префиксный ПОСТИНКРЕМЕНТ. Получается ответ 4, а переменная b увеличивается на 1.
+        alert(a); //3. Переменная увеличилась на 2 в следствии операции двух инкрементов.
+        alert(b); //ответ: 3. Переменная увеличилась на 2 в следствии операции двух инкрементов.
+    </script>
+
+    <script>
+        let z = 2;
+        let x = 1 + (z *= 2);
+        //РАБОТА ПРОГРАММЫ
+        /*И так, сначала переменной z присваивается значение 2. Далее происходит операция, в ходе которой переменная Z умножается на два, и ПРИСВАИВАЕТСЯ НОВОЕ ЗНАЧЕНИЕ ПЕРЕМЕННОЙ z, а после
+        к этому умножению прибавляется 1. Итого ответ: 5, а переменная Z имеет новое значение - 4*/
+    </script>
+
+    <script>
+        let y = Number(prompt("Введите первое значение"));
+        let q = Number(prompt("Введите второе значение"));
+        if (y >= 0 && q >= 0) {
+            result = y - q;
+            alert(result);
+        } else if ((y <= 0 && q >= 0) || (y >= 0 && q <= 0)) {
+            result = y + q;
+            alert(result);
+        }
+    </script>
+
+    <script>
+        function sum() {
+            let arg1 = Number(prompt("Введите первое значение"));
+            let arg2 = Number(prompt("Введите второе значение"));
+            sum = arg1 + arg2;
+            console.log(sum)
+            return;
+        }
+        function raz() {
+            let arg1 = Number(prompt("Введите первое значение"));
+            let arg2 = Number(prompt("Введите второе значение"));
+            raz = arg1 - arg2;
+            console.log(raz)
+            return;
+        }
+        function del() {
+            let arg1 = Number(prompt("Введите первое значение"));
+            let arg2 = Number(prompt("Введите второе значение"));
+            del = arg1 / arg2;
+            console.log(del)
+            return;
+        }
+        function mult() {
+            let arg1 = Number(prompt("Введите первое значение"));
+            let arg2 = Number(prompt("Введите второе значение"));
+            mult = arg1 * arg2;
+            console.log(mult)
+            return;
+        }
+    </script>
+
+    <script>
+        function MathOperation(arg1, arg2, operation) {
+            switch (operation) {
+                case "+":
+                    return sum(arg1, arg2);
+
+                case "-":
+                    return raz(arg1, arg2);
+
+                case "/":
+                    return del(arg1, arg2);
+
+                case "*":
+                    return mult(arg1, arg2);
+                default:
+                    alert("Такая операция не предусмотрена.")
+            }
+        }
+        console.log(MathOperation(5, 6, "+"))
+        console.log(MathOperation(5, 6, "-"))
+        console.log(MathOperation(5, 6, "/"))
+        console.log(MathOperation(5, 6, "*"))
+    </script>
+</body>
+
+</html>
